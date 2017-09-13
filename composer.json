@@ -1,0 +1,8 @@
+{
+    "name": "carkii/notifier",
+    "autoload": {
+        "psr-4": {
+            "Carkii\\Notifier\\": "src/"
+        }
+    }
+}
