@@ -24,7 +24,8 @@ class NotifierServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
         // publish views (notifications ex), CSS & JS files
         $this->publishes([
-            __DIR__.'/views/example.blade.php' => config('view.paths')[0].'/notifications/example.blade.php',
+            __DIR__.'/views/_cardExample.blade.php' => config('view.paths')[0].'/notifications/_cardExample.blade.php',
+            __DIR__.'/views/_ModalExample.blade.php' => config('view.paths')[0].'/notifications/_ModalExample.blade.php',
             __DIR__.'/public/css/notifications.css' => public_path('css/notifications.css'),
             __DIR__.'/public/js/notifications.js' => public_path('js/notifications.js'),
         ]);                    
