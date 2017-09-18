@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">        
-        <img width=100% src="{{asset('/images/exampleImage.jpg')}}" alt="#">
+        <img width=100% src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="#">
         <p>Notification body text goes here.</p>
       </div>
       <div class="modal-footer">

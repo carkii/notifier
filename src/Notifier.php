@@ -52,7 +52,7 @@ class Notifier implements NotifierInterface
      * @return init|null number of notifications
      */
     public function count()
-    {                   
+    {        
         return $this->missingNotifications->count();
     }
 
