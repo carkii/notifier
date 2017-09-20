@@ -71,11 +71,52 @@ add CSRF_token to your head tag, add: ```php <meta name="csrf-token" content="{{
  3- remove the first underscore (_) from ```/resources/views/notifications/_ModalExample.blade.php``` to be as ```/resources/views/notifications/ModalExample.blade.php```. (this example is using bootstrap)
  
  
- Note: the first underscore of your notification file tells Notifier to ignore this file.
+ Note: 
  
+    - break($days,$hours,$minutes) is used to add a break time between notifications.
+    
+    - the first underscore of your notification file tells Notifier to ignore this file.
  
-All of your notifications are located in ```/resources/views/notifications/```, each notification in each file (blade template)
-
-So, whenever you add a file to this folder, it means you are adding a new notification to your list.
+    - All of your notifications are located in ```/resources/views/notifications/```, each notification in each file (blade template) So, whenever you add a file to this folder, it means you are adding a new notification to your list.
 
 4- visit your website :)
+
+## 2- Card (list of notifications)
+
+1- login in to your website
+ 
+ 2- add the following to your page (default: app.blade.php, recommended in navbar):
+ 
+ ```php 
+ // get list of notifications and diaply them as a list
+ // navbar
+    <nav class="navbar navbar-inverse">
+       <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Notifications
+          @if(Notifier::count())                        
+            <span class="badge background-myred notifications-counter">{{Notifier::count()}}</span>
+          @endif                      
+          <i class="fa fa-bell" aria-hidden="true"></i>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          @if(Notifier::any())
+            @foreach(Notifier::get() AS $notification )
+            <li>{!! $notification !!}</li>
+            @endforeach
+          @else
+            <li class='text-center' >No Notifications</li>
+          @endif
+        </ul>
+      </li>
+    </nav>  
+ //end of navbar
+ 
+ //end of your page's body
+ {!! Notifier::addStylesAndScriptes() !!}
+ ```
+ 
+ 3- remove the first underscore (_) from ```/resources/views/notifications/_CardExample.blade.php``` to be as ```/resources/views/notifications/CardExample.blade.php```. (this example is using bootstrap)
+ 
+ 4- visit your website :)
