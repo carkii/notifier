@@ -53,7 +53,7 @@ class Notifier implements NotifierInterface
      */
     public function count()
     {                   
-        return 'sssss';
+        return $this->missingNotifications->count();
     }
 
     /**
@@ -216,7 +216,7 @@ class Notifier implements NotifierInterface
     public function addStylesAndScriptes(){        
         // css & Js
         echo '<link rel="stylesheet" href="'.asset('css/notifications.css').'">
-              <script id="notificationsJS" acknowledgedURL="'.route('notifier::acknowledged').'" notificationsCounter="'.$this->count().'" src="'.asset('js/notifications.js?').'"></script>';
+              <script id="notificationsJS" acknowledgedURL="'.route('notifier::acknowledged').'" notificationsCounter="'.$this->count().'" src="'.asset('js/notifications.js').'"></script>';
     }
 
 }
