@@ -18,10 +18,12 @@ class NotifierServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/config.php' => config_path('notifier.php'),
         ]);
-        // load migrations
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');        
-        // load routes
-        $this->loadRoutesFrom(__DIR__.'/routes/routes.php');
+        // load migrations            
+        $this->publishes([
+            __DIR__.'/database/migrations' => database_path('migrations')
+        ], 'migrations');
+        // load routes        
+        require __DIR__.'/routes/routes.php';
         // publish views (notifications ex), CSS & JS files
         $this->publishes([
             __DIR__.'/views/_cardExample.blade.php' => config('view.paths')[0].'/notifications/_cardExample.blade.php',

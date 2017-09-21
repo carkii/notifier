@@ -1,5 +1,5 @@
 {
-    "name": "carkiidev/notifier",
+    "name": "carkii/notifier",
     "version": "1.0.2",    
     "autoload": {
         "psr-4": {
