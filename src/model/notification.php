@@ -7,5 +7,6 @@ use DateTime;
 use Carbon\Carbon;
 class notification extends Model
 {   
+	protected $connection = config('notifier.DB_connection');
     protected $fillable = ['name','user_id'];
 }

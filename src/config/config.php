@@ -7,5 +7,6 @@ return [
 	'container' => [
 		'class' => '',
 		'id' => 'notification-{notification_name}'
-	]
+	],
+	'DB_connection' => 'mysql'
 ];
